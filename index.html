@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>#GeekLog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="card">
+        <div class="avatar-container">
+            <img src="assets/avatar.png" alt="GeekLog Avatar" class="avatar">
+        </div>
+        
+        <h1 class="title glitch" data-text="#GeekLog">#GeekLog</h1>
+        
+        <p class="description" id="typewriter"></p>
+
+        <div class="links">
+            <a href="https://github.com/G33KL0G" target="_blank" class="btn glitch-btn" data-text="GitHub">GitHub</a>
+            <a href="https://youtube.com/@твой_канал" target="_blank" class="btn glitch-btn" data-text="YouTube">YouTube</a>
+            <a href="https://instagram.com/твой_канал" target="_blank" class="btn glitch-btn" data-text="Instagram">Instagram</a>
+            <a href="https://tumblr.com/твой_канал" target="_blank" class="btn glitch-btn" data-text="Tumblr">Tumblr</a>
+            <a href="https://t.me/твой_канал" target="_blank" class="btn glitch-btn" data-text="Telegram">Telegram</a>
+        </div>
+    </div>
+
+    <script>
+        const text = "DIY projects, technology, honest thoughts and lots of coffee.\nWelcome to my digital workshop. ☕️";
+        const el = document.getElementById('typewriter');
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                el.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 65);
+            }
+        }
+
+        setTimeout(typeWriter, 600);
+    </script>
+</body>
+</html>
