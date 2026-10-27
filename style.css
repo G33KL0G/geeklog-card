@@ -45,7 +45,7 @@ body {
     font-weight: 700;
 }
 
-/* === SLOW HORIZONTAL GLITCH FOR TITLE (NO HOVER ACCELERATION) === */
+/* === SLOW HORIZONTAL GLITCH FOR TITLE === */
 .glitch {
     position: relative;
     display: inline-block;
@@ -73,8 +73,6 @@ body {
     z-index: -2;
     animation: glitch-h-2 3.5s infinite linear alternate-reverse;
 }
-
-/* ❌ Убрали .glitch:hover::before и .glitch:hover::after — теперь нет ускорения */
 
 @keyframes glitch-h-1 {
     0%   { clip-path: inset(10% 0 85% 0); transform: translateX(-2px); }
@@ -180,6 +178,41 @@ body {
     50%  { clip-path: inset(40% 0 40% 0); transform: translate(-50%, -50%) translateX(-2px); }
     75%  { clip-path: inset(10% 0 80% 0); transform: translate(-50%, -50%) translateX(2px); }
     100% { clip-path: inset(75% 0 15% 0); transform: translate(-50%, -50%) translateX(-1px); }
+}
+
+/* === GOLDEN DONATION BUTTON === */
+.donation-section {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.donation-text {
+    font-size: 0.85rem;
+    color: #888888;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.btn-donate {
+    border-color: #FFD700; /* Золотой */
+    color: #FFD700;
+}
+
+.btn-donate:hover {
+    background: rgba(255, 215, 0, 0.1);
+    color: #FFFFFF;
+    border-color: #FFA500; /* Янтарный при наведении */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Переопределяем цвета глитча специально для золотой кнопки */
+.btn-donate.glitch-btn:hover::before {
+    color: #FFA500;
+}
+
+.btn-donate.glitch-btn:hover::after {
+    color: #FFD700;
 }
 
 @keyframes fadeIn {
